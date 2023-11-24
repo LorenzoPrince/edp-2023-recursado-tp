@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+
+generar_archivo() {
+    tipo=$1
+    echo "Generando archivo de $tipo..."
+    
+    case $tipo in
+      	texto)
+            base64 /dev/urandom | head -c 500 > "texto-$(date +"%Y%m%d%H%M%S%N")"
+            ;;
+        sonido)
+            ffmpeg -f lavfi -i "anoisesrc=a=0.1:c=white:duration=5" out.wav "sonido-$(date +"%Y%m%d%H%M%S%N")" 
+            ;;
+        imagen)
+            convert -size 100x100 xc: +noise Random  "imagen-$(date +"%Y%m%d%H%M%S%N")"
+            ;;
+        *)
+            echo "Tipo de archivo no válido."
+            return 1
+            ;;
+    esac
+
+    echo "Archivo de $tipo generado."
+}
+
+generar_archivo
