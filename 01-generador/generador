@@ -5,7 +5,7 @@
 generar_archivo() {
     tipo=$1
     echo "Generando archivo de $tipo..."
-    
+
     case $tipo in
       	texto)
             base64 /dev/urandom | head -c 500 > "texto-$(date +"%Y%m%d%H%M%S%N")"
@@ -25,4 +25,4 @@ generar_archivo() {
     echo "Archivo de $tipo generado."
 }
 
-generar_archivo
+generar_archivo $1
