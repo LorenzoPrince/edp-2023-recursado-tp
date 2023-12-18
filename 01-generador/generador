@@ -8,13 +8,13 @@ generar_archivo() {
 
     case $tipo in
       	texto)
-            base64 /dev/urandom | head -c 500 > "outputs_gen/texto-$(date +"%Y%m%d%H%M%S%N")"  
+            base64 /dev/urandom | head -c 500 > "output_gen/texto"
             ;;
         sonido)
-            ffmpeg -f lavfi -i "anoisesrc=a=0.1:c=white:duration=5" "out.wav" 
+            ffmpeg -f lavfi -i "anoisesrc=a=0.1:c=white:duration=5" "output_gen/out.wav" 
             ;;
         imagen)
-            convert -size 100x100 xc: +noise Random  "outputs_gen/imagen-$(date +"%Y%m%d%H%M%S%N").png"
+            convert -size 100x100 xc: +noise Random  "output_gen/imagen.png"
             ;;
         *)
             echo "Tipo de archivo no válido."
@@ -23,6 +23,21 @@ generar_archivo() {
     esac
 
     echo "Archivo de $tipo generado."
+    if [ $1 == "imagen" ] ;then
+    pum=$(md5sum "output_gen/imagen.png" | cut -d " " -f1)
+    mv "output_gen/imagen.png" "output_gen/$pum" 
+    fi
+
+    if [ $1 == "sonido" ] ;then
+    pum=$(md5sum "output_gen/out.wav" | cut -d " " -f1)
+    mv "output_gen/out.wav" "output_gen/$pum"
+    fi
+
+    if [ $1 == "texto" ] ;then
+    pum=$(md5sum "output_gen/texto" | cut -d " " -f1)
+    mv "output_gen/texto" "output_gen/$pum"
+    fi
+
 }
 
 generar_archivo $1

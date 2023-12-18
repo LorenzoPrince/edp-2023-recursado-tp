@@ -4,7 +4,7 @@
 [ ! -d outputs_clasificador/snd ] && mkdir outputs_clasificador/snd
 [ ! -d outputs_clasificador/txt ] && mkdir outputs_clasificador/txt
 
-ruta_entrada=/home/lubuntu/trabajo_practico/edp-2023-recursado-tp/01-generador/outputs_gen
+ruta_entrada=/home/lolo/tpfinal/edp-2023-recursado-tp/01-generador/output_gen
 
 # Contadores para la numeración
 contador_img=1
