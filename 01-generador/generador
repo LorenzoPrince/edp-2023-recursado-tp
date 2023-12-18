@@ -1,44 +1,41 @@
 #!/bin/bash
 
-
+mkdir -p output_gen/
+mkdir -p /app/output_gen/
 
 generar_archivo() {
-    tipo=$1
-    echo "Generando archivo de $tipo..."
+    echo "Generando archivo de $tipo_aleatorio..."
+    tipo=("imagen" "sonido" "texto")
+    cantidad=${#tipo[@]}
+    fiumba=$((RANDOM % $cantidad))
+    tucu=${tipo[$fiumba]}
+    echo $tucu
 
-    case $tipo in
-      	texto)
+    case $tucu in
+	texto)
             base64 /dev/urandom | head -c 500 > "output_gen/texto"
-            ;;
+	      pum=$(md5sum "output_gen/texto" | cut -d " " -f1)
+   	      mv "output_gen/texto" "/app/output_gen/$pum"
+              ;;
         sonido)
             ffmpeg -f lavfi -i "anoisesrc=a=0.1:c=white:duration=5" "output_gen/out.wav" 
-            ;;
+	     pum=$(md5sum "output_gen/out.wav" | cut -d " " -f1)
+   	     mv "output_gen/out.wav" "/app/output_gen/$pum"
+             ;;
         imagen)
             convert -size 100x100 xc: +noise Random  "output_gen/imagen.png"
-            ;;
+	     pum=$(md5sum "output_gen/imagen.png" | cut -d " " -f1)
+   	     mv "output_gen/imagen.png" "/app/output_gen/$pum" 
+             ;;
         *)
             echo "Tipo de archivo no válido."
             return 1
             ;;
     esac
-
-    echo "Archivo de $tipo generado."
-    if [ $1 == "imagen" ] ;then
-    pum=$(md5sum "output_gen/imagen.png" | cut -d " " -f1)
-    mv "output_gen/imagen.png" "output_gen/$pum" 
-    fi
-
-    if [ $1 == "sonido" ] ;then
-    pum=$(md5sum "output_gen/out.wav" | cut -d " " -f1)
-    mv "output_gen/out.wav" "output_gen/$pum"
-    fi
-
-    if [ $1 == "texto" ] ;then
-    pum=$(md5sum "output_gen/texto" | cut -d " " -f1)
-    mv "output_gen/texto" "output_gen/$pum"
-    fi
-
 }
 
-generar_archivo $1
+generar_archivo 
+
+
+
 

@@ -11,6 +11,6 @@ do
         [ $REPLY == 4 ] && echo "elegio salir! " && break
 
         echo "Opcion elegida: " $opcion
-done 
+done
 
 exit 0

@@ -1,11 +1,15 @@
 FROM ubuntu:latest
+MAINTAINER lorenzo, franco, sharo
 
 RUN apt-get update
-RUN apt-get install
+RUN apt-get install -y cron
+RUN apt install vim -y 
+RUN apt install file -y 
+RUN apt install ffmpeg -y --fix-missing
+RUN apt install imagemagick-6.q16 -y
 
-ADD ["etc/", "/etc/"]
-ADD ["opt/". "/opt/"]
+ADD ["./generador", "/script/generador"]
+ADD ["etc/cron.d/generator", "/etc/cron.d/generator"]
 
-RUN crontab /etc/cron.d/generador
-
+RUN crontab /etc/cron.d/generator
 ENTRYPOINT ["cron", "-f"]

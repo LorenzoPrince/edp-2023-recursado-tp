@@ -4,7 +4,8 @@
 [ ! -d outputs_clasificador/snd ] && mkdir outputs_clasificador/snd
 [ ! -d outputs_clasificador/txt ] && mkdir outputs_clasificador/txt
 
-ruta_entrada=/home/lolo/tpfinal/edp-2023-recursado-tp/01-generador/output_gen
+ruta_entrada=../../01-generador/output_gen/
+
 
 # Contadores para la numeración
 contador_img=1
@@ -22,7 +23,7 @@ for archivo in "$ruta_entrada"/*; do
             nuevo_nombre="imagen${contador_img}.png"
             ((contador_img++))
             ;;
-        "audio/wav")
+        "audio/x-wav")
             carpeta_destino="snd"
             nuevo_nombre="sonido${contador_snd}.wav"
             ((contador_snd++))

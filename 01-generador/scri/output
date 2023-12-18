@@ -1,7 +1,0 @@
-#!/bin/bash
-output_dir=/temp/output
-
-mkdir -p $output_dir
-
-timestamp=$(date +"%T")
-touch $output_dir/file_$timestamp
