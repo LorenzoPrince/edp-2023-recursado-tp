@@ -1,16 +1,30 @@
 #!/bin/bash
 
+arch_pal=textos/texto1.txt
+arch_mail=textos/texto1.txt
+
 PS3="Elija> "
-echo "Hola, soy el submenu del TP. ¿Que quiere hacer?"
+echo "Hola, soy el submenu del TP. ¿Qué quiere hacer?"
 select opcion in "statsWord" "palindromeDetection" "mailAdressDetection" "Salir"
 do
-        [ -z "$opcion" ] && echo "elegir opcion valida! " && continue
-        [ $REPLY == 1 ] && echo "statsWord" && continue
-        [ $REPLY == 2 ] && echo "palindromeDetection! " && continue
-        [ $REPLY == 3 ] && echo "mailAddressDetection! " && continue
-        [ $REPLY == 4 ] && echo "elegio salir! " && break
-
-        echo "Opcion elegida: " $opcion
+    case $opcion in
+        "statsWord")
+            ./statsWord.sh
+            ;;
+        "palindromeDetection")
+            ./palindromo.sh "$arch_pal"
+            ;;
+        "mailAdressDetection")
+            ./mail.sh "$arch_mail"
+            ;;
+        "Salir")
+            echo "Ha elegido salir."
+            break
+            ;;
+        *)
+            echo "Opción no válida."
+            ;;
+    esac
 done
 
 exit 0

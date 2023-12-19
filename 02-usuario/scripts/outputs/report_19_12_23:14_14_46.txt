@@ -1,0 +1,6 @@
+-----MONITOR-----
+uso de %Cpu(s): 10,0 us, 6,7 sy, 0,0 ni, 80,0 id, 0,0 wa, 0,0 hi, 3,3 si, 0,0 st
+uso de MiB Mem : 3907,6 total, 387,2 libre, 1544,1 usado, 1976,3 búfer/caché
+cantidad de procesos 194
+disco Disp 4,4G
+porcentaje espacio Uso% 76%
