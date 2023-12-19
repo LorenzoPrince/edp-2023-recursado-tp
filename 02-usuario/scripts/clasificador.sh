@@ -41,8 +41,7 @@ for archivo in "$ruta_entrada"/*; do
 
     # Mover y renombrar el archivo
     mv "$archivo" "outputs_clasificador/$carpeta_destino/$nuevo_nombre"
-
+    tar -cvf outputs_clasificador.tar outputs_clasificador
     echo "Archivo clasificado: $(basename "$archivo") -> $carpeta_destino/$nuevo_nombre"
 done
  
-
