@@ -1,4 +1,4 @@
-}l#!/bin/bash
+#!/bin/bash
 
 PS3="Elija> "
 echo "Hola, soy el menu del TP. ¿Que quiere hacer?"

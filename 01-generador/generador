@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir -p output_gen/
-mkdir -p /app/output_gen/  #revisar pq el profe recomendo esta ruta(no la encuentra)
+
 
 generar_archivo() {
     echo "Generando archivo de $tipo_aleatorio..."
