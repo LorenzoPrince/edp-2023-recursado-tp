@@ -8,7 +8,7 @@ RUN apt install file -y
 RUN apt install ffmpeg -y --fix-missing
 RUN apt install imagemagick-6.q16 -y
 
-ADD ["./generador", "/script/generador"]
+ADD ["./generador", "/opt/src/generador"]
 ADD ["etc/cron.d/generator", "/etc/cron.d/generator"]
 ADD ["opt/src/cron-generador.sh", "/opt/src/cron-generador.sh"]
 
