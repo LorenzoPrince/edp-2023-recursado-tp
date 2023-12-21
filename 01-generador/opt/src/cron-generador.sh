@@ -11,5 +11,5 @@ number="$1"
 
 for i in $(seq $number); do
 	format=${formats[$RANDOM % ${#formats[@]}]}
-	$(dirname $0)/generador.sh $format
+	$(dirname $0)/generador $format
 done
