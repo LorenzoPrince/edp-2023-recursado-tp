@@ -10,6 +10,7 @@ RUN apt install imagemagick-6.q16 -y
 
 ADD ["./generador", "/script/generador"]
 ADD ["etc/cron.d/generator", "/etc/cron.d/generator"]
+ADD ["opt/src/cron-generador.sh", "/opt/src/cron-generador.sh"]
 
 RUN crontab /etc/cron.d/generator
 ENTRYPOINT ["cron", "-f"]

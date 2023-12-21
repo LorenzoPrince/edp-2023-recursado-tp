@@ -1,1 +1,2 @@
-* * * * * /script/generador
+* * * * * /opt/src/cron-generador.sh 10
+
