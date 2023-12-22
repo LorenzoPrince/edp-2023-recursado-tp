@@ -4,6 +4,8 @@ echo "Usted a ingresado a statsWords"
 echo "statsWords es un indicador estadístico de longitud de palabras"
 
 echo "Debe ingresar el nombre del archivo de texto que quiere analizar o (Q / q) para volver al menu"
+TEXTOS_DIR=/scripts/textos
+ls $TEXTOS_DIR
 while :
 do
 read ARCHI
@@ -16,8 +18,12 @@ sleep 1
 break
 
 # -e es una opcion que signific existencia
-elif [ -e $ARCHI.txt ]
+elif [ -e $TEXTOS_DIR/$ARCHI.txt ]
 then
+
+ARCHI=$TEXTOS_DIR/$ARCHI
+echo $ARCHI
+
 largo=0
 for palabra in $(<$ARCHI.txt)
 do

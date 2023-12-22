@@ -9,13 +9,13 @@ select opcion in "statsWord" "palindromeDetection" "mailAdressDetection" "Salir"
 do
     case $opcion in
         "statsWord")
-            ./statsWord.sh
+            $(dirname $0)/statsWord.sh
             ;;
         "palindromeDetection")
-            ./palindromo.sh "$arch_pal"
+            $(dirname $0)/palindromo.sh "$arch_pal"
             ;;
         "mailAdressDetection")
-            ./mail.sh "$arch_mail"
+            $(dirname $0)/mail.sh "$arch_mail"
             ;;
         "Salir")
             echo "Ha elegido salir."

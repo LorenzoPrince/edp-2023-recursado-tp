@@ -6,8 +6,8 @@ select opcion in "Clasificar archivos" "Monitorear Sistema" "Analizar texto" "Sa
 do
 	[ -z "$opcion" ] && echo "elegir opcion valida! " && continue
 	[ $REPLY == 1 ] && $(dirname $0)/clasificador.sh && continue
-	[ $REPLY == 2 ] && ./monitor.sh && continue
-	[ $REPLY == 3 ] && ./submeu.sh && continue
+	[ $REPLY == 2 ] && $(dirname $0)/monitor.sh && continue
+	[ $REPLY == 3 ] && $(dirname $0)/submeu.sh && continue
 	[ $REPLY == 4 ] && echo "elegio salir! " && break
 
 	echo "Opcion elegida: " $opcion

@@ -4,7 +4,7 @@
 [ ! -d outputs_clasificador/snd ] && mkdir outputs_clasificador/snd
 [ ! -d outputs_clasificador/txt ] && mkdir outputs_clasificador/txt
 
-ruta_entrada=../../01-generador/output_gen/
+ruta_entrada=/tmp/input
 
 
 # Contadores para la numeración
