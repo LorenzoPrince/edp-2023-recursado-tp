@@ -4,14 +4,16 @@
 
 ```
 $ cd 01-generador/
-$ docker build ...
-$ docker run ...
+$ docker build ...docker build -t gener .
+
+$ docker run ... docker run -it -v $(pwd)/output_gen/:/root/output_gen/ gener
+
 ```
 
 ## usuario
 
 ```
 $ cd 02-usuario/
-$ docker build ...
-$ docker run ...
+$ docker build ... docker build -t edp .
+$ docker run ... docker run -it -v $(pwd)/../01-generador/ouput/:/tmp/input/ edp
 ```

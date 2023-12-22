@@ -6,9 +6,9 @@ mkdir -p output_gen/
 generar_archivo() {
     echo "Generando archivo de $tipo_aleatorio..."
     tipo=("imagen" "sonido" "texto")
-    cantidad=${#tipo[@]}
-    fiumba=$((RANDOM % $cantidad))
-    tucu=${tipo[$fiumba]}
+    cantidad=${#tipo[@]} #todo los elementos, el #es la cantidad de elementos
+    fiumba=$((RANDOM % $cantidad)) #genera un numero aleatorio
+    tucu=${tipo[$fiumba]} #selecciona un elemento de tipo usando el aleatorio
     echo $tucu
 
     case $tucu in

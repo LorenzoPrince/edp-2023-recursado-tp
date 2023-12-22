@@ -1,6 +1,6 @@
-FROM bash:5.2.21
-WORKDIR app
-ADD scripts/ .
+FROM ubuntu:latest
 
-ENTRYPOINT ["bash","menu.sh"]
+ADD ["scripts/", "/scripts/"]
+
+ENTRYPOINT ["/scripts/menu.sh"]
 
