@@ -1,7 +1,7 @@
 #!/bin/bash
 
-arch_pal=textos/texto1.txt
-arch_mail=textos/texto1.txt
+arch_pal=/scripts/textos/texto1.txt
+arch_mail=/scripts/textos/texto1.txt
 
 PS3="Elija> "
 echo "Hola, soy el submenu del TP. ¿Qué quiere hacer?"
