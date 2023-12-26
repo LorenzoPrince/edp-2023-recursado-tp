@@ -7,6 +7,8 @@
 ruta_entrada=/tmp/input
 
 
+
+
 # Contadores para la numeración
 contador_img=1
 contador_snd=1

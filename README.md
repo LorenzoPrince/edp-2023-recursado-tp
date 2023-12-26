@@ -15,5 +15,5 @@ $ docker run ... docker run -it -v $(pwd)/output_gen/:/root/output_gen/ gener
 ```
 $ cd 02-usuario/
 $ docker build ... docker build -t edp .
-$ docker run ... docker run -it -v $(pwd)/../01-generador/ouput/:/tmp/input/ edp
+$ docker run ... docker run -it -v $(pwd)/../01-generador/ouput_gen/:/root/input_gen/ edp
 ```
