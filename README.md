@@ -17,3 +17,4 @@ $ cd 02-usuario/
 $ docker build ... docker build -t edp .
 $ docker run ... docker run -it -v $(pwd)/../01-generador/ouput_gen/:/root/input_gen/ edp
 ```
+# esta anda docker run -it -v $(pwd)/../01-generador/output_gen/:/root/input_gen usu
